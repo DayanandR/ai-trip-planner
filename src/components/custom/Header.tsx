@@ -112,7 +112,7 @@ const Header = () => {
                   Sign in to the App with Google authentication securely
                 </p>
                 <Button
-                  onClick={handleLogin}
+                  onClick={() => handleLogin()}
                   className="mt-5 w-full flex gap-4 items-center justify-center"
                 >
                   <FcGoogle className="h-7 w-7" />
