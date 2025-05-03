@@ -61,7 +61,7 @@ const UserTripCardItem = ({
           Budget:{" "}
           <span className="font-medium">
             {trip?.userSelection?.budget
-              ? `$${trip.userSelection.budget}`
+              ? `${trip.userSelection.budget}`
               : "N/A"}
           </span>
         </p>

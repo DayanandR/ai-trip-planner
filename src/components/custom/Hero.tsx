@@ -10,7 +10,7 @@ const Hero = () => {
         </h1>
         <p className="text-xl text-gray-500 text-center">Your personal trip planner and travel curator, creating custom itineraries tailored to your interests and budget</p>
        
-       <Link to='/create-trip'> <Button>Get Started, It's Free</Button></Link>
+       <Link to='/create-trip' > <Button className="hover:cursor-pointer">Get Started, It's Free</Button></Link>
     </div>
   )
 }
