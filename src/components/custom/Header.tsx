@@ -91,7 +91,7 @@ const Header = () => {
           </Popover>
         </div>
       ) : (
-        <Button onClick={() => setOpenDialog(true)}>Sign In</Button>
+        <Button className="cursor-pointer" onClick={() => setOpenDialog(true)}>Sign In</Button>
       )}
 
       <Dialog open={openDialog} onOpenChange={handleOpenChange}>
@@ -113,7 +113,7 @@ const Header = () => {
                 </p>
                 <Button
                   onClick={() => handleLogin()}
-                  className="mt-5 w-full flex gap-4 items-center justify-center"
+                  className="mt-5 w-full flex gap-4 items-center justify-center cursor-pointer"
                 >
                   <FcGoogle className="h-7 w-7" />
                   Sign In With Google
