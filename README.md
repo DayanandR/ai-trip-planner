@@ -1,54 +1,137 @@
-# React + TypeScript + Vite
+# 🧠✈️ AI Trip Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plan your dream trip in seconds with AI! This web app uses **Google Gemini AI**, **Google Auth**, and **SerpAPI** to help users discover and plan ideal itineraries, powered by a serverless backend.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/user-attachments/assets/e7257c6f-d8c8-444e-a9d8-496a6788a5e9)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Features
+
+- 🌍 AI-powered trip planning with Gemini  
+- 🔐 Google Sign-In using OAuth Client ID  
+- 📍 Destination discovery via SerpAPI (Google Places)  
+- ☁️ Serverless backend (Vercel Functions)  
+- 🧠 Smart itinerary suggestions by Gemini  
+- 🎨 Responsive UI with Tailwind CSS  
+- ⚡ Lightning-fast dev experience with Vite  
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer       | Tech |
+|-------------|------|
+| Frontend    | [React](https://reactjs.org/) |
+| Styling     | [Tailwind CSS](https://tailwindcss.com/) |
+| Auth        | [Google OAuth Client ID](https://developers.google.com/identity) |
+| AI Engine   | [Google Gemini API](https://ai.google.dev/) |
+| Places API  | [SerpAPI](https://serpapi.com/google-places-api) |
+| Hosting/API | [Vercel (Serverless)](https://vercel.com/) |
+| Build Tool  | [Vite](https://vitejs.dev/) |
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/ai-trip-planner.git
+cd ai-trip-planner
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 2. Install Dependencies
+```bash
+npm install
 ```
+
+### 3. Configure Environment Variables
+Create a `.env` file in the root with:
+
+```env
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+VITE_GEMINI_API_KEY=your_gemini_api_key
+VITE_SERPAPI_KEY=your_serpapi_key
+VITE_BACKEND_API=https://your-vercel-serverless-endpoint.vercel.app/api
+```
+
+### 4. Start Development Server
+```bash
+npm run dev
+```
+
+### 5. Deploy to Vercel
+```bash
+npm run build
+vercel --prod
+```
+
+---
+
+## 🔐 Google Auth Flow
+
+- Auth handled using Google OAuth Client ID
+- Token returned and stored in browser context
+- Secure routes are protected via frontend checks
+- Logout clears token and resets state
+
+---
+
+## 🧠 AI Integration (Gemini)
+
+- Uses user prompts to generate daily itineraries
+- Responds with optimized activities, travel tips
+- API request sent via secure serverless function
+
+---
+
+## 📍 Location Discovery (SerpAPI)
+
+- Place names searched via SerpAPI
+- Supports destination lookup, popular spots, geo-tags
+- Places used as prompt context for Gemini
+
+---
+
+## 📁 Folder Structure
+
+```
+ai-trip-planner/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── services/        # Gemini, Auth, SerpAPI
+│   ├── utils/
+│   ├── App.jsx
+│   └── main.jsx
+├── api/                 # Vercel serverless functions
+├── .env
+└── vite.config.js
+```
+
+---
+
+## 🧪 To-Do / Roadmap
+
+- [ ] PDF export of full itinerary
+- [ ] Map integration for routes
+- [ ] Re-plan day with user feedback
+- [ ] Travel cost estimator
+
+---
+
+## 🔗 Connect
+
+- [Portfolio](https://portfolio-website-nedy.vercel.app/)
+- [LinkedIn](https://www.linkedin.com/in/dayanand-rathod)
+
+---
+
+## ⭐ Show Your Support
+
+Give a ⭐️ if this project helped you!
